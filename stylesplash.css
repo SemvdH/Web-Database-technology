@@ -32,7 +32,9 @@
  }
 
  #htpButton {
-     color: #929292;
+     color: #b50000;
+     background-color: #d3d3d3;
+     box-shadow: 2px 5px #929292;
      font-size: 1em;
      border: 1px solid black;
      border-radius: 6px;
@@ -43,6 +45,7 @@
      padding: 10px;
      padding-bottom: 20px;
      background: url('https://i.imgur.com/zd3TzSW.png');
+     border-radius: 5px;
  }
 
  #htpTitle {
