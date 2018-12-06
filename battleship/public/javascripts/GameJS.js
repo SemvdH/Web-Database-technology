@@ -19,7 +19,7 @@ $( function changeColor() {
   });
 });
 
-// timer
+// ------ begin code for timer ------
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
@@ -39,3 +39,5 @@ function pad(val) {
     return valString;
   }
 }
+
+// ------ end code for timer ------
