@@ -8,5 +8,5 @@ function instructionsDropDwn() {
 }
 
 function hideEnterName() {
-    document.getElementById("entername").nodeValue = 0;
+    document.getElementById("entername").value = "";
 }
