@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>BattleSen</title>
-<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
-<link href="reset.css" rel="stylesheet" type="text/css">
-<link href="stylesplash.css" rel="stylesheet" type="text/css">
+	<title>BattleSen</title>
+	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+	<link href="reset.css" rel="stylesheet" type="text/css">
+	<link href="stylesplash.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
 	<header>
 		<div class="title">
@@ -13,29 +15,37 @@
 		</div>
 	</header>
 	<main>
-	<section class="user-part">
-		<p class="gameinfo">Current players:</p>
-		<p class="gameinfodisplayed">ADD JS</p>
-		<p class="gameinfo">Current games:</p>
-		<p class="gameinfodisplayed">ADD JS</p>
-		<p class="gameinfo">Server status:</p>
-		<p class="gameinfodisplayed">ADD JS</p>
-		<div class="start-button">
-			<input id="entername" type="text" name="" value="Enter name"><br> 
-			<button class="button" onclick= "window.location.href='Game.html'">Start</button>
-		</div>
-	</section>
+		<section class="user-part">
+			<p class="gameinfo">Current players:</p>
+			<p class="gameinfodisplayed">ADD JS</p>
+			<p class="gameinfo">Current games:</p>
+			<p class="gameinfodisplayed">ADD JS</p>
+			<p class="gameinfo">Server status:</p>
+			<p class="gameinfodisplayed">ADD JS</p>
+			<div class="start-button">
+				<input id="entername" type="text" name="" value="Enter name"><br>
+				<button class="button" onclick="window.location.href='Game.html'">Start</button>
+			</div>
+		</section>
+		<section class="howtoplay">
+			<div class="playinstructions">
+				<p><span id="htpTitle">How to play:</span></p>
+				<p><span id="htpText">Click the squares in the play area to place your shots,
+					Try to sink your opponent by destroying all their ships!
+					But watch out: your opponent has the same goal!</span></p>
+			</div>
+		</section>
 	</main>
 
 	<footer>
-		
-			<img id="image" src="https://i.imgur.com/4Lmoyok.png" alt="This is supposed to be an epic battleship getting fired at">
-		
+
+		<img id="image" src="https://i.imgur.com/4Lmoyok.png" alt="This is supposed to be an epic battleship getting fired at">
+
 		<h6 id="credits">made by Dan Dan Berendsen & Sem van der Hoeven</h6>
 	</footer>
 
 	<script src="SplashJS.js"></script>
 	<script scr="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 </body>
-</html>
 
+</html>
