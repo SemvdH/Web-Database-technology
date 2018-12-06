@@ -1,0 +1,16 @@
+body {
+    background-color: #d3d3d3;
+}
+
+.player {
+    border: 1px solid #b50000;
+    size: 800px;
+}
+
+.opponent {
+    border: 1px solid #790000;
+}
+
+.battlefield-row {
+    border: 1px solid #b50000;
+}
