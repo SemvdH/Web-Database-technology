@@ -23,7 +23,8 @@
  }
 
  .howtoplay {
-     width: 300px;
+     width: 426px;
+     height: 240px;
      position: relative;
      float: right;
      margin-right: 45%;
@@ -39,12 +40,18 @@
 
  #playinstructions {
      display: none;
-     
+     padding: 10px;
+     padding-bottom: 20px;
+     background: url('https://i.imgur.com/zd3TzSW.png');
  }
 
  #htpTitle {
      color: #d3d3d3;
      font-size: 1.2em;
+ }
+
+ #htpText {
+     color: #d3d3d3;
  }
  
 
