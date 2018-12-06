@@ -6,3 +6,7 @@ function instructionsDropDwn() {
         x.style.display = "none";
     }
 }
+
+function hideEnterName() {
+    document.getElementById("entername").value = "";
+}
