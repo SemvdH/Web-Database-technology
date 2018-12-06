@@ -1,16 +1,85 @@
-body {
+/* body {
     background-color: #d3d3d3;
 }
 
-.player {
-    border: 1px solid #b50000;
-    size: 800px;
+table {
+    border-collapse: collapse;
+    border-spacing: 0; 
 }
 
-.opponent {
-    border: 1px solid #790000;
+#player {
+    border: 1px solid #b50000;
 }
+
+#player tr td {
+    width: 60px; 
+    height: 60px; 
+}
+
+
 
 .battlefield-row {
     border: 1px solid #b50000;
-}
+} */
+
+* {
+    margin: 0; 
+    padding: 0; 
+    background-color: #d3d3d3
+  }
+  
+  table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+  }
+  
+  #player { 
+    padding: 0px; 
+    margin: 0 auto; 
+    border: 2px solid #500000; 
+    float: top;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  #player tr td { 
+    width: 50px; 
+    height: 50px; 
+  }
+  
+  #player tr:nth-child(n) td:nth-child(n) { 
+    background: #b50000; 
+    border: 2px solid #d3d3d3;
+  }
+
+  #player tr:nth-child(n):hover td:nth-child(n):hover { 
+    background: #860000; 
+   
+  }
+
+  #opponent {
+    padding: 0px; 
+    margin: 0 auto; 
+    border: 2px solid #500000;
+    float: ;
+    margin-top: -430px;
+    margin-left: 600px; 
+    position:absolute;
+  }
+  
+  #opponent tr td { 
+    width: 35px; 
+    height: 35px; 
+  }
+  
+  #opponent tr:nth-child(n) td:nth-child(n) { 
+    background: #b50000; 
+    border: 2px solid #d3d3d3;
+  }
+
+  footer {
+      
+      /* margin-top: 100%; */
+
+      position: relative;
+  }
