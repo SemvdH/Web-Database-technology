@@ -6,6 +6,7 @@
  body {
      background-image: url('https://i.imgur.com/nhS5pr6.png');
      background-size: 100%;
+     background-repeat:none;
  }
 
  .title {
