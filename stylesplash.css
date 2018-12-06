@@ -27,7 +27,7 @@
 
  #htpTitle {
      color: #929292;
-     font-size: 1.1em;
+     font-size: 1.2em;
  }
 
  body {
@@ -70,8 +70,8 @@
 
  #image {
      position: absolute;
-     right: 0px;
-     bottom: 0px;
+     right: -7px;        /* -7 om te zorgen dat je het schuine randje niet ziet */
+     bottom: -1px;      /* -1 omdat je nog een klein randje zag */
      max-width: 65%;
      height: auto;
  }
