@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: #d3d3d3;
-    font-family: 'Signika', cursive;
+    font-family: 'Signika', 'Times New Roman', Times, serif;
 
 }
 
@@ -10,6 +10,13 @@ body {
     width: 80%;
     margin: auto;
     
+}
+
+#titel {
+    font-family: 'Signika', cursive;
+     font-size: 3.5em;
+     color: #b50000;
+     margin-top: 20px;
 }
 
 table {
@@ -22,7 +29,7 @@ table {
     margin: 0 auto;
     border: 2px solid #500000;
     float: top;
-    margin-top: 100px;
+    margin-top: 60px;
     margin-left: 20px;
 }
 
@@ -45,7 +52,7 @@ table {
     padding: 0px;
     margin: 0 auto;
     border: 2px solid #500000;
-    margin-top: -430px;
+    margin-top: -435px;
     margin-left: 600px;
     position: absolute;
 }
@@ -61,9 +68,23 @@ table {
 }
 
 .whosShipsAreThese {
-    font-size: 1.9em;
+    font-size: 1.7em;
     color: #860000;
+    
+}
+
+#opponentShipsText {
+    float: left;
+    position: absolute;
+    margin-top:7px;
+    margin-left: 10%;
+}
+
+#playerShipsText {
+    float: right;
     position: relative;
+    margin-right: 30%;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -105,4 +126,8 @@ margin-top: 5%;
 
 .clicked {
     background-color: #d3d3d3;
+}
+
+.clicked tr td:hover {
+    background-color: aquamarine;
 }
