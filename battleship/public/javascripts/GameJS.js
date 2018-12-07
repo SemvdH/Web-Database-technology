@@ -1,4 +1,5 @@
 var main = function () {
+  "use strict";
 
   var space = 1;
   for (var r = 0; r < 10; r++) {
