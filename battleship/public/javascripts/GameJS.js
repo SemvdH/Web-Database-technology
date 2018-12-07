@@ -61,3 +61,26 @@ var main = function () {
 };
 
 $(document).ready(main);
+
+var board = function (table, size, shot) {
+  this.table = table;
+  this.size = size
+  this.shot = shot;
+  
+  //creating variable attributes for each cell
+  var row, cell, checkbox, fragment = document.createDocumentFragment(),
+    checkboxes = [], x, y;
+  for(y=0; y<size; y++) {
+    for(x=0; x<size; x++) {
+      cell = document.createElement('td');
+      checkbox = document.createElement('input');
+
+      checkbox.type = 'checkbox';
+      chechbox.cell = new Cell[y, x];
+
+      if(shot) {
+        checkbox.addEventListener("click", this.clickHandler, false);
+      }
+    }
+  }
+}
