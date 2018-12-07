@@ -4,7 +4,7 @@ var main = function () {
   for (var r = 0; r < 10; r++) {
     var col = "";
     for (var c = 0; c < 10; c++) {
-      col += "<td></td>";
+      col += "<td id='" + r + "," + c + "'" + "</td>";
       space++;
     }
     // data-pos='"+space+"'
