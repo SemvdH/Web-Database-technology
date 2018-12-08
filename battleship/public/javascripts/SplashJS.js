@@ -1,4 +1,4 @@
-var main = function() {
+var main = function () {
     "use strict";
 
 }
@@ -14,12 +14,12 @@ function instructionsDropDwn() {
 }
 
 //enter pressed goes to game screen
-$("#entername").keyup(function(event) {
+$("#entername").keyup(function (event) {
     if (event.keyCode === 13) {
-      console.log("Enter was pressed in the name field!")
-      $(".button").click();
+        console.log("Enter was pressed in the name field!")
+        $(".button").click();
     }
-  });
+});
 
 function hideEnterName() {
     document.getElementById("entername").value = "";
@@ -28,10 +28,10 @@ function hideEnterName() {
 //check if server is online
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     console.log("server online!");
-    document.getElementById("serverstatus").innerHTML = "Online!";      //jquery didn't work, so just use regular js
+    document.getElementById("serverstatus").innerHTML = "Online!"; //jquery didn't work, so just use regular js
     $('#serverstatus').css("color", "#09f228");
 } else {
-    document.getElementById("serverstatus").innerHTML = "Offline!";     //jquery didn't work, so just use regular js
+    document.getElementById("serverstatus").innerHTML = "Offline!"; //jquery didn't work, so just use regular js
     $('#serverstatus').css("color", "red");
     console.log("server offline!");
 }
@@ -41,5 +41,16 @@ function goToGameScreen() {
     console.log(PlayerName);
     // window.location.href='Game.html';
 }
+
+function enterPressesButton() {
+    $("#entername").keyup(function (event) {
+        if (event.keyCode === 13) {
+            console.log("Enter was pressed in the name field!")
+            $(".button").click();
+        }
+    });
+}
+
+
 
 $(document).ready(main);

@@ -6,9 +6,9 @@ var main = function () {
     var col = "";
     for (var c = 0; c < 10; c++) {
       col += "<td id='" + r + "." + c + "'</td>";
-      col = col.replace('< td', '');  //tried to replace weird part with empty string, but didn't work
+      col = col.replace('< td', ''); //tried to replace weird part with empty string, but didn't work
       space++;
-      
+
     }
 
     // 
@@ -16,16 +16,15 @@ var main = function () {
     $(".opponent").append("<tr>" + col + "</tr>");
   }
 
-  $(function changeColor() {
-    var cell = ".player tr td";
+  $(function clickOnCell() {
 
     $('.player tr td').click(function () {
       var cellClasses = document.getElementById(this.id).classList;
       console.log("classes is " + cellClasses);
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
-      }
-      else if (cellClasses.contains("clicked")) {
+
+      } else if (cellClasses.contains("clicked")) {
         console.log("Has already been pressed");
       }
 
@@ -41,6 +40,38 @@ var main = function () {
     });
   });
 
+
+//function that generates a random cell
+  function randomCell() {
+    // numbers need to be between and including 0 and 9
+      var min = Math.ceil(0);
+      var max = Math.floor(9);
+      // generate 2 random numbers for coordinates (formula found online)
+      var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
+      var randomNumber2 = (Math.floor(Math.random() * (max - min + 1)) + min);
+      var randomGeneratedCell = (randomNumber + "." + randomNumber2);
+      // console.log(randomGeneratedCell);
+      return randomGeneratedCell;
+  };
+
+  // place a ship on a random cell
+  $(function randomShipPlacer() {
+    var opponenttable = document.getElementsByClassName("opponent");
+    console.log(opponenttable);
+      for (var i = 0; i < 17; i++) {
+        var cell = document.getElementById(randomCell());
+        console.log(cell);
+        var classes = cell.classList;
+        console.log(classes);
+        if (!classes.contains('hasShip')) {
+          classes.add('hasShip');
+        };
+      };
+    });
+
+  
+
+  
   // ------ begin code for timer ------
 
   var minutesLabel = document.getElementById("minutes");
@@ -71,9 +102,15 @@ var main = function () {
   }
 
   // ------ end code for timer ------
+
+  // function placeShip(x_pos, y_pos) {
+  //   var d = document.getElementById('carrier');
+  //   d.style.position = "absolute";
+  //   d.style.left = x_pos + 'px';
+  //   d.style.left = y_pos + 'px';
+  // }
 };
 
 
 
 $(document).ready(main);
-
