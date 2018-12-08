@@ -5,8 +5,10 @@ var main = function () {
   for (var r = 0; r < 10; r++) {
     var col = "";
     for (var c = 0; c < 10; c++) {
-      col += "<td id='"+r+"."+c+"'</td>";
+      col += "<td id='" + r + "." + c + "'</td>";
+      col = col.replace('< td', '');  //tried to replace weird part with empty string, but didn't work
       space++;
+      
     }
 
     // 
@@ -16,7 +18,7 @@ var main = function () {
 
   $(function changeColor() {
     var cell = ".player tr td";
-    
+
     $('.player tr td').click(function () {
       var cellClasses = document.getElementById(this.id).classList;
       console.log("classes is " + cellClasses);
@@ -24,6 +26,10 @@ var main = function () {
         cellClasses.add("clicked");
         $(this).css('background-color', '#aaa');
       }
+      // if (cellClasses.contains("clicked")) {
+      //   $(this).css('background-color', '#aaa'); //this does work, but it still doesn't apply the class css
+      // }
+
       console.log("classes is now " + cellClasses);
       //$(this).css('background-color', '#aaa');
       console.log(this.id);
@@ -76,7 +82,7 @@ $(document).ready(main);
 //   this.table = table;
 //   this.size = size
 //   this.shot = shot;
-  
+
 //   //creating variable attributes for each cell
 //   var row, cell, checkbox, fragment = document.createDocumentFragment(),
 //     checkboxes = [], x, y;
@@ -100,7 +106,7 @@ $(document).ready(main);
 //     }
 //     fragment.appendChild(row)
 //   }
-  
+
 //   Board.prototype.clickHandler = function () {
 //     if (this.cell.hasShip) {
 //       console.log("Hit!");
