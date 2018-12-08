@@ -24,7 +24,10 @@
 			<p class="gameinfodisplayed">ADD JS</p>
 			<div class="start-button">
 				<input id="entername" type="text" name="" value="Enter name" onclick="hideEnterName()"><br>
-				<button class="button" onclick="window.location.href='Game.html'">Start</button>
+				<!-- server redirects to game.html -->
+				<form action="/play" method="get">
+					<button class="button" onclick="window.location.href='Game.html'">Start</button>
+				</form>
 			</div>
 		</section>
 		<section class="howtoplay">
@@ -33,10 +36,10 @@
 			<div id="playinstructions">
 				<p><span id="htpTitle">How to play:</span></p>
 				<p><span id="htpText">Click the squares in your opponent's board to place your shots,
-				Try to defeat your opponent by destroying all their ships!
-				But watch out: your opponent has the same goal!</span></p>
+						Try to defeat your opponent by destroying all their ships!
+						But watch out: your opponent has the same goal!</span></p>
 			</div>
-			
+
 		</section>
 	</main>
 
@@ -48,10 +51,10 @@
 	</footer>
 
 	<script scr="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="javascripts/SplashJS.js"></script>
 	<script src="javascripts/test.js"></script>
-	
+
 </body>
 
 </html>
