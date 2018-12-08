@@ -24,11 +24,10 @@ var main = function () {
       console.log("classes is " + cellClasses);
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
-        $(this).css('background-color', '#aaa');
       }
-      // if (cellClasses.contains("clicked")) {
-      //   $(this).css('background-color', '#aaa'); //this does work, but it still doesn't apply the class css
-      // }
+      else if (cellClasses.contains("clicked")) {
+        console.log("Has already been pressed");
+      }
 
       console.log("classes is now " + cellClasses);
       //$(this).css('background-color', '#aaa');
