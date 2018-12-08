@@ -25,4 +25,15 @@ function hideEnterName() {
     document.getElementById("entername").value = "";
 }
 
+//check if server is online
+if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    console.log("server online!");
+    document.getElementById("serverstatus").innerHTML = "Online!";
+    $('#serverstatus').css("color", "#09f228");
+} else {
+    document.getElementById("serverstatus").innerHTML = "Offline!";
+    $('#serverstatus').css("color", "red");
+    console.log("server offline");
+}
+
 $(document).ready(main);
