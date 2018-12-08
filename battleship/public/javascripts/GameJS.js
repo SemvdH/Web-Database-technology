@@ -58,11 +58,13 @@ var main = function () {
   $(function randomShipPlacer() {
     var opponenttable = document.getElementsByClassName("opponent");
     console.log(opponenttable);
+    // total amount of cells for ships is 17
       for (var i = 0; i < 17; i++) {
         var cell = document.getElementById(randomCell());
         console.log(cell);
         var classes = cell.classList;
         console.log(classes);
+        //add hasship class to cell if it doesn't have it already
         if (!classes.contains('hasShip')) {
           classes.add('hasShip');
         };
