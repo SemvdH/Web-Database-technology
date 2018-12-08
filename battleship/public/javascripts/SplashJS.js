@@ -1,7 +1,7 @@
 var main = function () {
     "use strict";
 
-}
+
 
 function instructionsDropDwn() {
     var x = document.getElementById("playinstructions");
@@ -51,6 +51,6 @@ function enterPressesButton() {
     });
 }
 
-
+};
 
 $(document).ready(main);

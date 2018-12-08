@@ -109,4 +109,7 @@ var main = function () {
   }
   // ------ end code for timer ------
 
+};
+
+
 $(document).ready(main);
