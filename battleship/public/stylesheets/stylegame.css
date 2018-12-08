@@ -126,9 +126,9 @@ margin-top: 5%;
 
 .clicked {
     background-color: #d3d3d3;
-    width: 30px;
+    border: 1px solid black;
 }
 
-.clicked tr td:hover {
+.clicked:hover {
     background-color: aquamarine;
 }
