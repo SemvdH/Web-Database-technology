@@ -19,6 +19,10 @@ body {
      margin-top: 20px;
 }
 
+#PlayerName {
+    color:rgb(255, 0, 0);
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
