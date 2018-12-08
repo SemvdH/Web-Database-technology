@@ -22,6 +22,7 @@ var main = function () {
       console.log("classes is " + cellClasses);
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
+        $(this).css('background-color', '#aaa');
       }
       console.log("classes is now " + cellClasses);
       //$(this).css('background-color', '#aaa');

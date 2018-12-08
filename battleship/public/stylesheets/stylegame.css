@@ -126,7 +126,7 @@ margin-top: 5%;
 
 .clicked {
     background-color: #d3d3d3;
-    width: 30px;
+    /* width: 30px; */
 }
 
 .clicked tr td:hover {
