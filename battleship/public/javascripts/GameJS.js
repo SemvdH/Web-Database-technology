@@ -5,21 +5,27 @@ var main = function () {
   for (var r = 0; r < 10; r++) {
     var col = "";
     for (var c = 0; c < 10; c++) {
-      col += "<td id='" + r + "," + c + "'" + "</td>";
+      col += "<td id='"+r+"."+c+"'</td>";
       space++;
     }
 
-    // data-pos='"+space+"'
+    // 
     $(".player").append("<tr>" + col + "</tr>");
     $(".opponent").append("<tr>" + col + "</tr>");
   }
 
   $(function changeColor() {
     var cell = ".player tr td";
+    
     $('.player tr td').click(function () {
-      $(this).css('background-color', '#aaa');
-      // $(this).css('border', '2px solid black');
-      $(this).toggleClass('clicked'); //doesn't want to work?
+      var cellClasses = document.getElementById(this.id).classList;
+      console.log("classes is " + cellClasses);
+      if (!cellClasses.contains("clicked")) {
+        cellClasses.add("clicked");
+      }
+      console.log("classes is now " + cellClasses);
+      //$(this).css('background-color', '#aaa');
+      console.log(this.id);
     });
   });
 
