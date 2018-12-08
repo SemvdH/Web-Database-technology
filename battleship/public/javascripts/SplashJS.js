@@ -28,12 +28,12 @@ function hideEnterName() {
 //check if server is online
 if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     console.log("server online!");
-    document.getElementById("serverstatus").innerHTML = "Online!";
+    document.getElementById("serverstatus").innerHTML = "Online!";      //jquery didn't work, so just use regular js
     $('#serverstatus').css("color", "#09f228");
 } else {
-    document.getElementById("serverstatus").innerHTML = "Offline!";
+    document.getElementById("serverstatus").innerHTML = "Offline!";     //jquery didn't work, so just use regular js
     $('#serverstatus').css("color", "red");
-    console.log("server offline");
+    console.log("server offline!");
 }
 
 $(document).ready(main);
