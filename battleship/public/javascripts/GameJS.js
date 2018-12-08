@@ -8,6 +8,7 @@ var main = function () {
       col += "<td id='" + r + "," + c + "'" + "</td>";
       space++;
     }
+
     // data-pos='"+space+"'
     $(".player").append("<tr>" + col + "</tr>");
     $(".opponent").append("<tr>" + col + "</tr>");
@@ -61,3 +62,45 @@ var main = function () {
 };
 
 $(document).ready(main);
+
+//Test js from github example
+
+// var board = function (table, size, shot) {
+//   this.table = table;
+//   this.size = size
+//   this.shot = shot;
+  
+//   //creating variable attributes for each cell
+//   var row, cell, checkbox, fragment = document.createDocumentFragment(),
+//     checkboxes = [], x, y;
+//   for(y=0; y<size; y++) {
+//     for(x=0; x<size; x++) {
+//       cell = document.createElement('td');
+//       checkbox = document.createElement('input');
+
+//       checkbox.type = 'checkbox';
+//       chechbox.cell = new Cell[y, x];
+
+//       if(shot) {
+//         checkbox.addEventListener("click", this.clickHandler, false);
+//       }
+
+//       checkboxes[y][x] = checkbox;
+
+//       cell.appendChild(checkbox);
+//       row.appendChild(cell);
+
+//     }
+//     fragment.appendChild(row)
+//   }
+  
+//   Board.prototype.clickHandler = function () {
+//     if (this.cell.hasShip) {
+//       console.log("Hit!");
+//       this.className = "hit";
+//     } else {
+//       console.log("Miss...");
+//       console.log(this.cell.coordinates);
+//     }
+//   };
+// }

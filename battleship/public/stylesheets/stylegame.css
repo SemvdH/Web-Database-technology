@@ -77,13 +77,13 @@ table {
     float: left;
     position: absolute;
     margin-top:7px;
-    margin-left: 10%;
+    margin-left: 20px;
 }
 
 #playerShipsText {
-    float: right;
-    position: relative;
-    margin-right: 30%;
+    float: top;
+    position: absolute;
+    margin-left: 600px;
     margin-bottom: 20px;
 }
 
