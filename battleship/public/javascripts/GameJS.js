@@ -68,14 +68,6 @@ var main = function () {
       return valString;
     }
   }
-
-  setInterval(getPlayerName, 5000);
-
-  function getPlayerName() {
-    var IGN;
-    IGN = $(".start-button input");
-    console.log(IGN);
-  }
   // ------ end code for timer ------
 };
 

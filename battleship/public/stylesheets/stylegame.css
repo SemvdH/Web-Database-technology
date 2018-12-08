@@ -134,5 +134,5 @@ margin-top: 5%;
 }
 
 .player tr:nth-child(n):hover td.clicked:nth-child(n):hover {
-    background: #aaa;
+    background: hotpink;
 }
