@@ -90,7 +90,6 @@ var main = function () {
     minutesLabel.innerHTML = calculateTime(parseInt(totalSeconds / 60));
   }
 
-
   function calculateTime(val) {
     var valString = val + "";
     //add a 0 if the time is only 1 digit
@@ -101,16 +100,13 @@ var main = function () {
     }
   }
 
+  setInterval(getPlayerName, 5000);
+
+  function getPlayerName() {
+    var IGN;
+    IGN = $(".start-button input");
+    console.log(IGN);
+  }
   // ------ end code for timer ------
-
-  // function placeShip(x_pos, y_pos) {
-  //   var d = document.getElementById('carrier');
-  //   d.style.position = "absolute";
-  //   d.style.left = x_pos + 'px';
-  //   d.style.left = y_pos + 'px';
-  // }
-};
-
-
 
 $(document).ready(main);
