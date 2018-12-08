@@ -59,7 +59,6 @@ var main = function () {
     minutesLabel.innerHTML = calculateTime(parseInt(totalSeconds / 60));
   }
 
-
   function calculateTime(val) {
     var valString = val + "";
     //add a 0 if the time is only 1 digit
@@ -73,7 +72,4 @@ var main = function () {
   // ------ end code for timer ------
 };
 
-
-
 $(document).ready(main);
-
