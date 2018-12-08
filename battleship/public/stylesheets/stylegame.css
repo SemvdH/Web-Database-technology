@@ -126,9 +126,9 @@ margin-top: 5%;
 
  .player tr:nth-child(n) td.clicked:nth-child(n) {
     background: #aaa;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .player tr:nth-child(n):hover td.clicked:nth-child(n):hover {
-    background: aquamarine;
+    background: #aaa;
 }
