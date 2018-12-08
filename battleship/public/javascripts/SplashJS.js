@@ -36,4 +36,10 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
     console.log("server offline!");
 }
 
+function goToGameScreen() {
+    var PlayerName = (".start-button input").value;
+    console.log(PlayerName);
+    // window.location.href='Game.html';
+}
+
 $(document).ready(main);
