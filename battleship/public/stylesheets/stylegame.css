@@ -20,7 +20,30 @@ body {
 }
 
 #PlayerName {
-    color:rgb(255, 0, 0);
+    color: #b50000;
+}
+
+.battleship {
+    height:50px;
+    background-color: black; 
+}
+#carrier {
+    width: 250px;
+}
+
+#battleship {
+    width: 200px;
+}
+
+#cruiser {
+    width: 150px;
+}
+#submarine {
+    width: 150px;
+}
+
+#destroyer {
+width: 100px;
 }
 
 table {
@@ -134,5 +157,14 @@ margin-top: 5%;
 }
 
 .player tr:nth-child(n):hover td.clicked:nth-child(n):hover {
-    background: hotpink;
+    background: #aaa;
 }
+
+.opponent tr:nth-child(n) td.hasShip:nth-child(n) {
+    background: black;
+}
+
+/* kijk als je deze doet dan generate hij gwn mooi alles, maar dan niet in de goeie tabel */
+/* .player tr:nth-child(n) td.hasShip:nth-child(n) {
+    background: black;
+} */
