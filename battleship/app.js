@@ -2,17 +2,25 @@
 //------------code from assignment-------------
 var express = require("express");
 var http = require("http");
-
-
-
+var websocket = require("ws");
 var port = process.argv[2];
 var app = express();
 
 app.use(express.static(__dirname + "/public"));
 // app.use(express.static('public'));
-http.createServer(app).listen(port);
+var server = http.createServer(app)
 //-----------------------------------------------
 const bodyparser = require("body-parser");
+
+//websocket part
+// const wss = new WebSocket.Server( {server} );
+
+// wss.on("connection", function(ws) {
+//   ws.on("message", function incoming(message) {
+//     console.log("[LOG] " + message);
+//   });
+// });
+
 
 /* GET splash page. */
 app.get('/', function(req, res, next) {
@@ -24,7 +32,7 @@ app.get("/play", function(req, res, next) {
   res.sendFile("game.html", {root: "./public"});
 });
 
-
+server.listen(port);
 
 //log each request made to server
 app.use(function(req, res, next) {
