@@ -1,4 +1,4 @@
-var main = function () {
+// var main = function () {
     "use strict";
 
 
@@ -51,6 +51,6 @@ function enterPressesButton() {
     });
 }
 
-};
+// };
 
-$(document).ready(main);
+// $(document).ready(main);
