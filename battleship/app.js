@@ -23,8 +23,14 @@ const bodyparser = require("body-parser");
 
 
 /* GET splash page. */
-app.get('/', function(req, res, next) {
-  res.sendFile("splash.html", {root: "./public"});
+// app.get('/', function(req, res, next) {
+//   res.sendFile("splash.html", {root: "./public"});
+// });
+
+// templating
+app.set('view engine', 'ejs')
+app.get('/', (req, res) => {
+    res.render('splash.ejs', { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
 });
 
 // pressing play button returns game page
