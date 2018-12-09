@@ -16,6 +16,7 @@ var main = function () {
     $(".opponent").append("<tr>" + col + "</tr>");
   }
 
+  var hits = 0;
   $(function clickOnCell() {
 
     $('.player tr td').click(function () {
@@ -23,6 +24,13 @@ var main = function () {
       console.log("classes is " + cellClasses);
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
+        if(cellClasses.contains("hasShip")) {
+          hits++;
+          console.log(hits);
+          if(hits === 16) {
+            $(alert("You won the game"));
+          }
+        }
 
       } else if (cellClasses.contains("clicked")) {
         console.log("Has already been pressed");
