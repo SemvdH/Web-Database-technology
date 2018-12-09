@@ -28,7 +28,7 @@ var main = function () {
           hits++;
           console.log(hits);
           if(hits === 16) {
-            $(alert("You won the game"));
+            $(alert("Congratulations! You won the game!"));
           }
         }
 
