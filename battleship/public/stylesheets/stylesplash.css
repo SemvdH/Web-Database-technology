@@ -6,7 +6,7 @@
  body {
      background-image: url('https://i.imgur.com/nhS5pr6.png');
      background-size: 100%;
-     background-repeat:none;
+     background-repeat: none;
  }
 
  .title {
@@ -47,6 +47,43 @@
      padding-bottom: 20px;
      background: url('https://i.imgur.com/zd3TzSW.png');
      border-radius: 5px;
+
+     /* animation */
+     animation: slide-in-blurred-bottom .5s cubic-bezier(.23, 1.000, .32, 1.000) both;
+     /* animation: slide-out-blurred-bottom .45s cubic-bezier(.755, .05, .855, .06) both; */
+     /* animation: slide-in-fwd-center .4s cubic-bezier(.25, .46, .45, .94) both */
+ }
+
+ /* @keyframes slide-out-blurred-bottom {
+     0% {
+         transform: translateY(0) scaleY(1) scaleX(1);
+         transform-origin: 50% 50%;
+         filter: blur(0);
+         opacity: 1
+     }
+
+     100% {
+         transform: translateY(1000px) scaleY(2) scaleX(.2);
+         transform-origin: 50% 100%;
+         filter: blur(40px);
+         opacity: 0
+     }
+ } */
+
+ @keyframes slide-in-blurred-bottom {
+     0% {
+         transform: translateY(1000px) scaleY(2.5) scaleX(.2);
+         transform-origin: 50% 100%;
+         filter: blur(40px);
+         opacity: 0
+     }
+
+     100% {
+         transform: translateY(0) scaleY(1) scaleX(1);
+         transform-origin: 50% 50%;
+         filter: blur(0);
+         opacity: 1
+     }
  }
 
  #htpTitle {
@@ -57,7 +94,7 @@
  #htpText {
      color: #d3d3d3;
  }
- 
+
 
  body {
      background-color: #b50000;
@@ -99,8 +136,10 @@
 
  #image {
      position: absolute;
-     right: -7px;        /* -7 om te zorgen dat je het schuine randje niet ziet */
-     bottom: -1px;      /* -1 omdat je nog een klein randje zag */
+     right: -7px;
+     /* -7 om te zorgen dat je het schuine randje niet ziet */
+     bottom: -1px;
+     /* -1 omdat je nog een klein randje zag */
      max-width: 65%;
      height: auto;
  }
@@ -112,11 +151,11 @@
      bottom: 0px;
  }
 
-.beforetest::before {
-    content: "";
-    width: 30px;
-    height: 30px;
-    float: left;
+ .beforetest::before {
+     content: "";
+     width: 30px;
+     height: 30px;
+     float: left;
      /* display:block; */
      background: url("https://img.icons8.com/cotton/2x/server.png");
      background-size: 100%;
