@@ -145,7 +145,7 @@ var main = function () {
       var max = Math.floor(1);
       // generate 2 random numbers for coordinates (formula found online)
       var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
-      console.log(randomNumber);
+      console.log("int is " + randomNumber);
       
     // var x = $(Math.random * 1);
     // console.log(x);
