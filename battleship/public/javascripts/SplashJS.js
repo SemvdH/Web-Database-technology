@@ -25,6 +25,8 @@
         });
     });
 
+    
+
 
     function hideEnterName() {
         document.getElementById("entername").value = "";
@@ -46,7 +48,9 @@
         console.log(PlayerName);
         // window.location.href='Game.html';
     };
-
+    // document.cookie = "timesVisited=1";
+    // var x = document.cookie;
+    // console.log("cookie is " + x);
 // };
 
 // $(document).ready(main);

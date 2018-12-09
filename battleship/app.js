@@ -6,6 +6,9 @@ var websocket = require("ws");
 var port = process.argv[2];
 var app = express();
 
+var cookies = require("cookie-parser");
+var timesvisited = require("./cookie");
+
 var gameStatus = require("./statTracker");
 var messages = require("./public/javascripts/messages");
 
@@ -18,13 +21,19 @@ const bodyparser = require("body-parser");
 //set view engine to ejs
 app.set('view engine', 'ejs');
 
+//use cookie
+app.use(cookies(timesvisited.timesVisited));
+
 //load ejs file of splash
 // app.get('/', function(req, res) {
 //   res.render("splash.ejs", {root: "./views"});
 // });
 
 app.get("/", (req, res) => {
+  console.log("cookie test");
+  res.cookie("testkoekje");
   res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
+  res.send();
 });
 
 //websocket part
