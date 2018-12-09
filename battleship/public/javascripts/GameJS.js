@@ -55,7 +55,7 @@ var main = function () {
   };
 
   // place a ship on a random cell
-  $(function randomShipPlacer() {
+  /*$(function randomShipPlacer() {
     var opponenttable = document.getElementsByClassName("opponent");
     console.log(opponenttable);
     // total amount of cells for ships is 17
@@ -69,10 +69,103 @@ var main = function () {
           classes.add('hasShip');
         };
       };
-    });
+  }); */
 
-  
+  //Some stuff to see if we can get 5 long ships
 
+  function placingships(cell, shiplength, rotation) {
+    var Cell = cell;
+    if(rotation === 0) {
+      for(var i = 1; i <= shiplength; i++) {
+        Cell.classList.add('hasShip');
+        console.log(Cell);
+        var sum = parseFloat(cell.id) + i;
+        Cell = document.getElementById(sum);
+      }
+    }
+    if(rotation === 1) {
+      for(var i = 1; i <= shiplength; i++) {
+        Cell.classList.add('hasShip');
+        var sum = parseFloat(cell.id) + i/10;
+        Cell = document.getElementById(sum);
+      };
+    };
+    console.log("placed");
+  };
+
+  function shipplacer(shiplength, rotation) {
+    var cell = document.getElementById(randomCell());
+    if (checkCells(cell, shiplength, rotation)) {
+      placingships(cell, shiplength, rotation) 
+    }
+    else {
+      if(rotation === 0) {
+        if (checkCells(cell, shiplength, 1)) {
+          placingships(cell, shiplength, 1)
+        } 
+      }
+      else {
+        shipplacer(shiplength, rotation);
+      }
+      if(rotation === 1) {
+        if (checkCells(cell, shiplength, 0)) {
+          placingships(cell, shiplength, 0)
+        } 
+      }
+      else {
+        shipplacer(shiplength, rotation);
+      };
+    };
+  };
+
+  function equality() {
+
+  }
+
+  function checkCells(cell, length, rotation) {
+    try {
+      for(var i = 0; i <length; i++) {
+        if(rotation === 0) {
+          var Tcell = document.getElementById(parseFloat(cell.id) + i);
+          // console.log(Tcell);
+          var tcellclass = Tcell.classList; 
+          var pt = parseFloat(Tcell);
+          pt = (pt * 10)%10
+          if(tcellclass.contains("hasShip") || pt > 9) {
+            console.log("false col")
+            return false;
+          }
+        }
+        
+        if(rotation === 1) {
+          var Tcell = document.getElementById(parseFloat(cell.id)+ i/10);
+          var tcellclass = Tcell.classList;
+          var pt = parseFloat(Tcell);
+          if(tcellclass.contains("hasShip") || pt > 9.9) {
+            console.log("false row")
+            return false;
+          }
+        }
+      }
+    console.log("true");
+    return true;
+    }
+    catch(err) {
+      console.log("false err")
+
+      return false;
+    }
+  };
+
+  $(function ships() {
+    for(var i = 5; i > 1; i--) {
+      var x = 1;
+      shipplacer(i, x);
+    };
+    shipplacer(2, 0);
+  });
+
+    
   
   // ------ begin code for timer ------
 
