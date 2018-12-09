@@ -25,9 +25,10 @@ var main = function () {
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
         if(cellClasses.contains("hasShip")) {
-          hit++;
+          hits++;
+          console.log(hits);
           if(hits === 16) {
-            alert("You won the game");
+            $(alert("You won the game"));
           }
         }
 
