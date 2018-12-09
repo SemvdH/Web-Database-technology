@@ -3,7 +3,26 @@
     padding: 0;
     background-color: #d3d3d3;
     font-family: 'Signika', 'Times New Roman', Times, serif;
+}
 
+
+.Alert {
+    display: none;
+    width: 150px;
+    margin: 20px;
+    padding: 5px;
+    border: solid 2px;
+    border-color: black;
+    background-color: blueviolet;
+    
+}
+
+@media only screen and (max-width: 470px), screen and (max-height: 670px) {
+    .Alert {
+        display: block;
+        float: top;
+        margin-left: 0px;
+    }
 }
 
 body {
@@ -128,8 +147,9 @@ footer {
     /* margin-top: 100%; */
     font-family: 'Signika', sans-serif;
     position: absolute;
-    bottom: 0px;
+    /* bottom: 0px; */
     left: 0px;
+    margin-top: 50px;
 }
 
 .timer {
