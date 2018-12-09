@@ -152,6 +152,10 @@ footer {
     /* font-size: 1.3em; */
 }
 
+#timeindicator:fullscreen {
+    color: black;
+}
+
 .beforetest::before {
     content: "";
     width: 20px;
