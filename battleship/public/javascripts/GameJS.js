@@ -140,14 +140,21 @@ var main = function () {
   });
 
   function int0or1() {
-    var x = $(Math.random * 1);
-    console.log(x);
-    if(x < 0.5) {
-      return 0;
-    }
-    else if(x > 0.5) {
-      return 1;
-    }
+
+    var min = Math.ceil(0);
+      var max = Math.floor(1);
+      // generate 2 random numbers for coordinates (formula found online)
+      var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
+      console.log(randomNumber);
+      
+    // var x = $(Math.random * 1);
+    // console.log(x);
+    // if(x < 0.5) {
+    //   return 0;
+    // }
+    // else if(x > 0.5) {
+    //   return 1;
+    // }
   }
     
   
