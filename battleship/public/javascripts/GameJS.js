@@ -78,7 +78,6 @@ var main = function () {
     if(rotation === 0) {
       for(var i = 1; i <= shiplength; i++) {
         Cell.classList.add('hasShip');
-        console.log(Cell);
         var sum = parseFloat(cell.id) + i;
         Cell = document.getElementById(sum);
       };
@@ -90,7 +89,6 @@ var main = function () {
         Cell = document.getElementById(sum);
       };
     };
-    console.log("placed");
   };
 
   function shipplacer(shiplength, rotation) {
@@ -99,28 +97,9 @@ var main = function () {
       placingships(cell, shiplength, rotation) 
     }
     else {
-      if(rotation === 0) {
-        if (checkCells(cell, shiplength, 1)) {
-          placingships(cell, shiplength, 1)
-        } 
-      }
-      else {
-        shipplacer(shiplength, rotation);
-      }
-      if(rotation === 1) {
-        if (checkCells(cell, shiplength, 0)) {
-          placingships(cell, shiplength, 0)
-        } 
-      }
-      else {
-        shipplacer(shiplength, rotation);
-      };
+      shipplacer(shiplength, rotation);
     };
   };
-
-  function equality() {
-
-  }
 
   function checkCells(cell, length, rotation) {
     try {
@@ -132,7 +111,6 @@ var main = function () {
           var pt = parseFloat(Tcell);
           pt = (pt * 10)%10
           if(tcellclass.contains("hasShip") || pt > 9) {
-            console.log("false col")
             return false;
           }
         }
@@ -142,29 +120,35 @@ var main = function () {
           var tcellclass = Tcell.classList;
           var pt = parseFloat(Tcell);
           if(tcellclass.contains("hasShip") || pt > 9.9) {
-            console.log("false row")
             return false;
           }
         }
       }
-    console.log("true");
     return true;
     }
     catch(err) {
-      console.log("false err")
-
       return false;
     }
   };
 
   $(function ships() {
     for(var i = 5; i > 1; i--) {
-      var x = 1;
+      var x = int0or1();
       shipplacer(i, x);
     };
-    shipplacer(2, 0);
+    shipplacer(2, int0or1());
   });
 
+  function int0or1() {
+    var x = $(Math.random * 1);
+    console.log(x);
+    if(x < 0.5) {
+      return 0;
+    }
+    else if(x > 0.5) {
+      return 1;
+    }
+  }
     
   
   // ------ begin code for timer ------
