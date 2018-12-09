@@ -166,9 +166,14 @@ footer {
 }
 
 .player tr:nth-child(n):hover td.clicked:nth-child(n):hover {
-    background: hotpink;
+    /* make it look that it's not clickable anymore */
+    background: #aaa;
 }
 
 .player tr:nth-child(n) td.hasShip.clicked:nth-child(n) {
+    background: black;
+}
+
+.player tr:nth-child(n) td.hasShip.clicked:nth-child(n):hover {
     background: black;
 }
