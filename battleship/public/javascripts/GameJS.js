@@ -80,8 +80,8 @@ var main = function () {
         Cell.classList.add('hasShip');
         var sum = parseFloat(cell.id) + i;
         Cell = document.getElementById(sum);
-      }
-    }
+      };
+    };
     if(rotation === 1) {
       for(var i = 1; i <= shiplength; i++) {
         Cell.classList.add('hasShip');
