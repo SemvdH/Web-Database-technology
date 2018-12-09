@@ -2,69 +2,81 @@
 <html>
 
 <head>
-	<title>BattleSen</title>
-	<link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
-	<link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
-	<link href="stylesheets/stylesplash.css" rel="stylesheet" type="text/css">
+    <title>BattleSen</title>
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/stylesplash.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<header>
-		<div class="title">
-			<h1>BattleSen</h1>
-		</div>
-	</header>
-	<main>
-		<section class="user-part">
-			<p class="gameinfo">Current players:</p>
-			<p class="gameinfodisplayed">ADD JS</p>
-			<p class="gameinfo">Current games:</p>
-			<p class="gameinfodisplayed">ADD JS</p>
-			<p class="gameinfo">Server status:</p>
-            <p><span class = "beforetest"> </span></p><p id="serverstatus" class="gameinfodisplayed">ADD JS</p>
-            
-            <h3><%= gamesInitialized %> 
-                <%if (gamesInitialized != 1) { %>
+    <header>
+        <div class="title">
+            <h1>BattleSen</h1>
+        </div>
+    </header>
+    <main>
+        <section class="user-part">
+            <!-- <p class="gameinfo">Current players:</p>
+            <p class="gameinfodisplayed">ADD JS</p>
+            <p class="gameinfo">Current games:</p>
+            <p class="gameinfodisplayed">ADD JS</p> -->
+            <p class="gameinfo">Server status:</p>
+            <p><span class="beforetest"> </span></p>
+            <p id="serverstatus" class="gameinfodisplayed">ADD JS</p>
+
+            <div class="templates">
+
+
+                <!-- <%if (gamesInitialized != 1) { %>
                     games
-                <% } else { %>
+                    <% } else { %>
                     game
-                <% } %>
-                initialized, 
-                <%= gamesCompleted %> 
-                completed
-            </h3>
-			
-			<div class="start-button">
-				<input id="entername" type="text" name="" value="Enter name" onclick="hideEnterName()"><br>
-				<!-- server redirects to game.html -->
-				<form action="/play" method="get">
-					<button class="button">Start</button>
-				</form>
-			</div>
-		</section>
-		<section class="howtoplay">
+                    <% } %> -->
+                <h3>
+                    Games initialized:
+                </h3>
+                <h3 class="gameinfodisplayed">
+                    <%= gamesInitialized %>
+                </h3>
+                <h3>
+                    Games completed:
+                </h3>
+                <h3 class="gameinfodisplayed">
+                    <%= gamesCompleted %>
+                </h3>
+            </div>
 
-			<button id="htpButton" onclick="instructionsDropDwn()">I don't know how to play!</button>
-			<div id="playinstructions">
-				<p><span id="htpTitle">How to play:</span></p>
-				<p><span id="htpText">Click the squares in your opponent's board to place your shots,
-						Try to defeat your opponent by destroying all their ships!
-						But watch out: your opponent has the same goal!</span></p>
-			</div>
+            <div class="start-button">
+                <input id="entername" type="text" name="" value="Enter name" onclick="hideEnterName()"><br>
+                <!-- server redirects to game.html -->
+                <form action="/play" method="get">
+                    <button class="button">Start</button>
+                </form>
+            </div>
+        </section>
+        <section class="howtoplay">
 
-		</section>
-	</main>
+            <button id="htpButton" onclick="instructionsDropDwn()">I don't know how to play!</button>
+            <div id="playinstructions">
+                <p><span id="htpTitle">How to play:</span></p>
+                <p><span id="htpText">Click the squares in your opponent's board to place your shots,
+                        Try to defeat your opponent by destroying all their ships!
+                        But watch out: your opponent has the same goal!</span></p>
+            </div>
 
-	<footer>
+        </section>
+    </main>
 
-		<img id="image" src="https://i.imgur.com/4Lmoyok.png" alt="This is supposed to be an epic battleship getting fired at">
+    <footer>
 
-		<h6 id="credits">made by Dan Dan Berendsen & Sem van der Hoeven</h6>
-	</footer>
+        <img id="image" src="https://i.imgur.com/4Lmoyok.png" alt="This is supposed to be an epic battleship getting fired at">
 
-	<script scr="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-	<script src="javascripts/SplashJS.js"></script>
+        <h6 id="credits">made by Dan Dan Berendsen & Sem van der Hoeven</h6>
+    </footer>
+
+    <script scr="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="javascripts/SplashJS.js"></script>
 
 </body>
 

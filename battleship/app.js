@@ -6,11 +6,26 @@ var websocket = require("ws");
 var port = process.argv[2];
 var app = express();
 
+var gameStatus = require("./statTracker");
+var messages = require("./public/javascripts/messages");
+
 app.use(express.static(__dirname + "/public"));
 // app.use(express.static('public'));
 var server = http.createServer(app)
 //-----------------------------------------------
 const bodyparser = require("body-parser");
+
+//set view engine to ejs
+app.set('view engine', 'ejs');
+
+//load ejs file of splash
+// app.get('/', function(req, res) {
+//   res.render("splash.ejs", {root: "./views"});
+// });
+
+app.get("/", (req, res) => {
+  res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
+});
 
 //websocket part
 // const wss = new WebSocket.Server( {server} );
@@ -28,17 +43,17 @@ const bodyparser = require("body-parser");
 // });
 
 // templating
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => {
-    res.render('splash.ejs', { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
-});
+// app.set('view engine', 'ejs')
+// app.get('/', (req, res) => {
+//     res.render('splash.ejs', { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
+// });
 
 // pressing play button returns game page
 app.get("/play", function(req, res, next) {
   res.sendFile("game.html", {root: "./public"});
 });
 
-server.listen(port);
+
 
 //log each request made to server
 app.use(function(req, res, next) {
@@ -47,7 +62,7 @@ app.use(function(req, res, next) {
   next(); // call on to next component
 });
 
-
+server.listen(port);
 //---------- auto generated code----------//
 // var createError = require('http-errors');
 // var express = require('express');

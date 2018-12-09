@@ -101,6 +101,7 @@
  }
 
  .gameinfodisplayed {
+     /* font-size: 1.1em; */
      color: #929292;
  }
 
@@ -167,4 +168,14 @@
      background: url("https://img.icons8.com/cotton/2x/server.png");
      background-size: 100%;
      margin: -3px 6px 0 0;
+ }
+
+ .templates {
+    margin-top: 5px;
+    color: #d3d3d3;
+   
+ }
+
+ .templates h3 {
+     margin-bottom: 5px;
  }
