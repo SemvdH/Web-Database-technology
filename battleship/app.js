@@ -14,7 +14,7 @@ http.createServer(app).listen(port);
 //-----------------------------------------------
 const bodyparser = require("body-parser");
 
-/* GET home page. */
+/* GET splash page. */
 app.get('/', function(req, res, next) {
   res.sendFile("splash.html", {root: "./public"});
 });
