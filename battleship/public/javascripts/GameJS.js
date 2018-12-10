@@ -34,7 +34,7 @@ var main = function () {
           hits++;
           console.log(hits);
           //if all ships are hit, the player has won
-          if (hits === 16) {
+          if (hits === 17) {
             $(alert("Congratulations! You won the game!"));
           }
         }
@@ -154,7 +154,7 @@ var main = function () {
       var x = int0or1();
       shipplacer(i, x);
     };
-    shipplacer(2, int0or1());
+    shipplacer(3, int0or1());
   });
 
   //generate random int between 0 or 1
