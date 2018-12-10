@@ -172,9 +172,10 @@ footer {
     /* font-size: 1.3em; */
 }
 
-#timeindicator:fullscreen {
-    color: black;
+.timer:fullscreen {
+    color: blue;
 }
+
 
 /* time icon on timer */
 .beforetest::before {
@@ -217,7 +218,7 @@ footer {
 }
 
 /* keyframes for vibrate animation: just a lot of small translations */
-@-webkit-keyframes vibrate {
+@keyframes vibrate {
     0% {
         -webkit-transform: translate(0);
         -moz-transform: translate(0);
