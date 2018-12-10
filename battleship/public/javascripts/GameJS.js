@@ -96,9 +96,13 @@ var main = function () {
   //random placement of ships
   function shipplacer(shiplength, rotation) {
     var cell = document.getElementById(randomCell());
+    //check if the cells where you want to place it are available
     if (checkCells(cell, shiplength, rotation)) {
+      //call the placing the cells funtion if the target cells are accepted
       placingships(cell, shiplength, rotation)
-    } else {
+    } 
+    //try again but with a starting cell and target cells to place the ship in
+    else {
       shipplacer(shiplength, rotation);
     };
   };
@@ -109,7 +113,6 @@ var main = function () {
       for (var i = 0; i < length; i++) {
         if (rotation === 0) {
           var Tcell = document.getElementById(parseFloat(cell.id) + i);
-          // console.log(Tcell);
           var tcellclass = Tcell.classList;
           var pt = parseFloat(Tcell);
           pt = (pt * 10) % 10
