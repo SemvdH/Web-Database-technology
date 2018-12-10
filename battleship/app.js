@@ -22,7 +22,7 @@ const bodyparser = require("body-parser");
 app.set('view engine', 'ejs');
 
 //use cookie
-app.use(cookies(timesvisited.timesVisited));
+// app.use(cookies(timesvisited.timesVisited));
 
 //load ejs file of splash
 // app.get('/', function(req, res) {
@@ -30,8 +30,6 @@ app.use(cookies(timesvisited.timesVisited));
 // });
 
 app.get("/", (req, res) => {
-  console.log("cookie test");
-  res.cookie("testkoekje", 'signed');
   //render game info
   res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
   res.send();
