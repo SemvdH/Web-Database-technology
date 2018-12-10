@@ -120,6 +120,7 @@ var main = function () {
     };
   };
 
+  
   function checkCells(cell, length, rotation) {
     try {
       for (var i = 0; i < length; i++) {
