@@ -1,17 +1,21 @@
 var main = function () {
   "use strict";
 
+  //create table in js
   var space = 1;
+  //make colums
   for (var r = 0; r < 10; r++) {
     var col = "";
+    //make cells
     for (var c = 0; c < 10; c++) {
+      //add id to cells
       col += "<td id='" + r + "." + c + "'</td>";
       col = col.replace('< td', ''); //tried to replace weird part with empty string, but didn't work
       space++;
 
     }
 
-    // 
+    // add table to DOM
     $(".player").append("<tr>" + col + "</tr>");
     $(".opponent").append("<tr>" + col + "</tr>");
   }
@@ -22,12 +26,15 @@ var main = function () {
     $('.player tr td').click(function () {
       var cellClasses = document.getElementById(this.id).classList;
       console.log("classes is " + cellClasses);
+      //add clicked class to cell if it doesn't already have it
       if (!cellClasses.contains("clicked")) {
         cellClasses.add("clicked");
-        if(cellClasses.contains("hasShip")) {
+        if (cellClasses.contains("hasShip")) {
+          //amount of hits increases
           hits++;
           console.log(hits);
-          if(hits === 16) {
+          //if all ships are hit, the player has won
+          if (hits === 16) {
             $(alert("Congratulations! You won the game!"));
           }
         }
@@ -42,6 +49,7 @@ var main = function () {
     });
   });
 
+  //alert player if he tries to click on own board
   $(function alertclick() {
     $('.opponent tr td').click(function () {
       alert("Hey! You can't attack your own ships!");
@@ -49,17 +57,17 @@ var main = function () {
   });
 
 
-//function that generates a random cell
+  //function that generates a random cell
   function randomCell() {
     // numbers need to be between and including 0 and 9
-      var min = Math.ceil(0);
-      var max = Math.floor(9);
-      // generate 2 random numbers for coordinates (formula found online)
-      var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
-      var randomNumber2 = (Math.floor(Math.random() * (max - min + 1)) + min);
-      var randomGeneratedCell = (randomNumber + "." + randomNumber2);
-      // console.log(randomGeneratedCell);
-      return randomGeneratedCell;
+    var min = Math.ceil(0);
+    var max = Math.floor(9);
+    // generate 2 random numbers for coordinates (formula found online)
+    var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
+    var randomNumber2 = (Math.floor(Math.random() * (max - min + 1)) + min);
+    var randomGeneratedCell = (randomNumber + "." + randomNumber2);
+    // console.log(randomGeneratedCell);
+    return randomGeneratedCell;
   };
 
   // place a ship on a random cell
@@ -80,86 +88,92 @@ var main = function () {
   }); */
 
   //Some stuff to see if we can get 5 long ships
-
   function placingships(cell, shiplength, rotation) {
     var Cell = cell;
-    if(rotation === 0) {
-      for(var i = 1; i <= shiplength; i++) {
+    if (rotation === 0) {
+      for (var i = 1; i <= shiplength; i++) {
+        //add ship class to cells in ship order
         Cell.classList.add('hasShip');
+        //add ship class to cells underneath
         var sum = parseFloat(cell.id) + i;
         Cell = document.getElementById(sum);
       };
     };
-    if(rotation === 1) {
-      for(var i = 1; i <= shiplength; i++) {
+    if (rotation === 1) {
+      //also add ship class
+      for (var i = 1; i <= shiplength; i++) {
         Cell.classList.add('hasShip');
-        var sum = parseFloat(cell.id) + i/10;
+        //add ship class to cells next to it
+        var sum = parseFloat(cell.id) + i / 10;
         Cell = document.getElementById(sum);
       };
     };
   };
 
+  //random placement of ships
   function shipplacer(shiplength, rotation) {
     var cell = document.getElementById(randomCell());
     if (checkCells(cell, shiplength, rotation)) {
-      placingships(cell, shiplength, rotation) 
-    }
-    else {
+      placingships(cell, shiplength, rotation)
+    } else {
       shipplacer(shiplength, rotation);
     };
   };
 
   function checkCells(cell, length, rotation) {
     try {
-      for(var i = 0; i <length; i++) {
-        if(rotation === 0) {
+      for (var i = 0; i < length; i++) {
+        if (rotation === 0) {
           var Tcell = document.getElementById(parseFloat(cell.id) + i);
           // console.log(Tcell);
-          var tcellclass = Tcell.classList; 
+          var tcellclass = Tcell.classList;
           var pt = parseFloat(Tcell);
-          pt = (pt * 10)%10
-          if(tcellclass.contains("hasShip") || pt > 9) {
+          pt = (pt * 10) % 10
+          if (tcellclass.contains("hasShip") || pt > 9) {
             return false;
           }
         }
-        
-        if(rotation === 1) {
-          var Tcell = document.getElementById(parseFloat(cell.id)+ i/10);
+
+        if (rotation === 1) {
+          var Tcell = document.getElementById(parseFloat(cell.id) + i / 10);
           var tcellclass = Tcell.classList;
           var pt = parseFloat(Tcell);
-          if(tcellclass.contains("hasShip") || pt > 9.9) {
+          if (tcellclass.contains("hasShip") || pt > 9.9) {
             return false;
           }
         }
       }
-    return true;
-    }
-    catch(err) {
+      return true;
+    } catch (err) {
       return false;
     }
   };
 
   $(function ships() {
-    for(var i = 5; i > 1; i--) {
+    for (var i = 5; i > 1; i--) {
       var x = int0or1();
       shipplacer(i, x);
     };
     shipplacer(2, int0or1());
   });
 
+  //generate random int between 0 or 1
+  //for vertical or horizontal ship placement
   function int0or1() {
 
     var min = Math.ceil(0);
-      var max = Math.floor(1);
-      var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
-      return randomNumber;
+    var max = Math.floor(1);
+    var randomNumber = (Math.floor(Math.random() * (max - min + 1)) + min);
+    return randomNumber;
   }
-    
-  
+
+
   // ------ begin code for timer ------
 
+  //get DOM elements
   var minutesLabel = document.getElementById("minutes");
   var secondsLabel = document.getElementById("seconds");
+  //initialize seconds to 0
   var totalSeconds = 0;
 
   //set interval to 1 second
@@ -171,9 +185,11 @@ var main = function () {
     //seconds is remainder of division by 60
     secondsLabel.innerHTML = calculateTime(totalSeconds % 60);
     //minutes is just divided by 60
+    //always an int, so anything below 60 is 0, above is 1 etc
     minutesLabel.innerHTML = calculateTime(parseInt(totalSeconds / 60));
   }
 
+  //calculate the time if it needs a 0 before it or not
   function calculateTime(val) {
     var valString = val + "";
     //add a 0 if the time is only 1 digit

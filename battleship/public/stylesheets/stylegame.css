@@ -85,7 +85,7 @@ table {
     width: 50px;
     height: 50px;
 
-    /* transitions: */
+    /* transitions: color fade in/out on hover */
     -webkit-transition: background 0.15s ease-in-out;
     -moz-transition: background 0.15s ease-in-out;
     -ms-transition: background 0.15s ease-in-out;
@@ -176,6 +176,7 @@ footer {
     color: black;
 }
 
+/* time icon on timer */
 .beforetest::before {
     content: "";
     width: 20px;
@@ -201,126 +202,107 @@ footer {
 }
 
 .player tr:nth-child(n):hover td.clicked:nth-child(n):hover {
-    /* make it look that it's not clickable anymore */
+    /* make it look like it's not clickable anymore */
     background: #aaa;
 }
+
 
 .player tr:nth-child(n) td.hasShip.clicked:nth-child(n) {
     background: black;
     -webkit-animation: vibrate 0.5s linear both;
+    -moz-animation: vibrate 0.5s linear both;
+    -ms-animation: vibrate 0.5s linear both;
+    -o-animation: vibrate 0.5s linear both;
     animation: vibrate 0.5s linear both;
 }
 
+/* keyframes for vibrate animation: just a lot of small translations */
 @-webkit-keyframes vibrate {
     0% {
         -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
         transform: translate(0);
     }
 
     10% {
         -webkit-transform: translate(-2px, -2px);
+        -moz-transform: translate(-2px, -2px);
+        -ms-transform: translate(-2px, -2px);
+        -o-transform: translate(-2px, -2px);
         transform: translate(-2px, -2px);
     }
 
     20% {
         -webkit-transform: translate(2px, -2px);
+        -moz-transform: translate(2px, -2px);
+        -ms-transform: translate(2px, -2px);
+        -o-transform: translate(2px, -2px);
         transform: translate(2px, -2px);
     }
 
     30% {
         -webkit-transform: translate(-2px, 2px);
+        -moz-transform: translate(-2px, 2px);
+        -ms-transform: translate(-2px, 2px);
+        -o-transform: translate(-2px, 2px);
         transform: translate(-2px, 2px);
     }
 
     40% {
         -webkit-transform: translate(2px, 2px);
+        -moz-transform: translate(2px, 2px);
+        -ms-transform: translate(2px, 2px);
+        -o-transform: translate(2px, 2px);
         transform: translate(2px, 2px);
     }
 
     50% {
         -webkit-transform: translate(-2px, -2px);
+        -moz-transform: translate(-2px, -2px);
+        -ms-transform: translate(-2px, -2px);
+        -o-transform: translate(-2px, -2px);
         transform: translate(-2px, -2px);
     }
 
     60% {
         -webkit-transform: translate(2px, -2px);
+        -moz-transform: translate(2px, -2px);
+        -ms-transform: translate(2px, -2px);
+        -o-transform: translate(2px, -2px);
         transform: translate(2px, -2px);
     }
 
     70% {
         -webkit-transform: translate(-2px, 2px);
+        -moz-transform: translate(-2px, 2px);
+        -ms-transform: translate(-2px, 2px);
+        -o-transform: translate(-2px, 2px);
         transform: translate(-2px, 2px);
     }
 
     80% {
         -webkit-transform: translate(-2px, -2px);
+        -moz-transform: translate(-2px, -2px);
+        -ms-transform: translate(-2px, -2px);
+        -o-transform: translate(-2px, -2px);
         transform: translate(-2px, -2px);
     }
 
     90% {
         -webkit-transform: translate(2px, -2px);
+        -moz-transform: translate(2px, -2px);
+        -ms-transform: translate(2px, -2px);
+        -o-transform: translate(2px, -2px);
         transform: translate(2px, -2px);
     }
 
     100% {
         -webkit-transform: translate(0);
-        transform: translate(0);
-    }
-}
-
-@keyframes vibrate-3 {
-    0% {
-        -webkit-transform: translate(0);
-        transform: translate(0);
-    }
-
-    10% {
-        -webkit-transform: translate(-2px, -2px);
-        transform: translate(-2px, -2px);
-    }
-
-    20% {
-        -webkit-transform: translate(2px, -2px);
-        transform: translate(2px, -2px);
-    }
-
-    30% {
-        -webkit-transform: translate(-2px, 2px);
-        transform: translate(-2px, 2px);
-    }
-
-    40% {
-        -webkit-transform: translate(2px, 2px);
-        transform: translate(2px, 2px);
-    }
-
-    50% {
-        -webkit-transform: translate(-2px, -2px);
-        transform: translate(-2px, -2px);
-    }
-
-    60% {
-        -webkit-transform: translate(2px, -2px);
-        transform: translate(2px, -2px);
-    }
-
-    70% {
-        -webkit-transform: translate(-2px, 2px);
-        transform: translate(-2px, 2px);
-    }
-
-    80% {
-        -webkit-transform: translate(-2px, -2px);
-        transform: translate(-2px, -2px);
-    }
-
-    90% {
-        -webkit-transform: translate(2px, -2px);
-        transform: translate(2px, -2px);
-    }
-
-    100% {
-        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
         transform: translate(0);
     }
 }
