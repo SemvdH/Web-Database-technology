@@ -34,7 +34,7 @@ var main = function () {
           hits++;
           console.log(hits);
           //if all ships are hit, the player has won
-          if (hits === 16) {
+          if (hits === 17) {
             $(alert("Congratulations! You won the game!"));
           }
         }
@@ -70,24 +70,7 @@ var main = function () {
     return randomGeneratedCell;
   };
 
-  // place a ship on a random cell
-  /*$(function randomShipPlacer() {
-    var opponenttable = document.getElementsByClassName("opponent");
-    console.log(opponenttable);
-    // total amount of cells for ships is 17
-      for (var i = 0; i < 17; i++) {
-        var cell = document.getElementById(randomCell());
-        console.log(cell);
-        var classes = cell.classList;
-        console.log(classes);
-        //add hasship class to cell if it doesn't have it already
-        if (!classes.contains('hasShip')) {
-          classes.add('hasShip');
-        };
-      };
-  }); */
-
-  //Some stuff to see if we can get 5 long ships
+  //Placing the actual ships
   function placingships(cell, shiplength, rotation) {
     var Cell = cell;
     if (rotation === 0) {
@@ -120,7 +103,7 @@ var main = function () {
     };
   };
 
-  
+  //Check if the target cells are available to place an ship
   function checkCells(cell, length, rotation) {
     try {
       for (var i = 0; i < length; i++) {
@@ -155,7 +138,7 @@ var main = function () {
       var x = int0or1();
       shipplacer(i, x);
     };
-    shipplacer(2, int0or1());
+    shipplacer(3, int0or1());
   });
 
   //generate random int between 0 or 1
