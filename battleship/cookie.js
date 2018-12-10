@@ -1,3 +1,3 @@
 module.exports = {
-    timesVisited: 1
+    timesVisited: 0
 };

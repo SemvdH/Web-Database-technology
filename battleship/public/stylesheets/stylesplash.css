@@ -62,17 +62,22 @@
 
      /* animation */
      animation: slide-in-with-blur .5s cubic-bezier(.23, 1.000, .32, 1.000) both;
+     -webkit-animation: slide-in-with-blur .5s cubic-bezier(.23, 1.000, .32, 1.000) both;
+     -moz-animation: slide-in-with-blur .5s cubic-bezier(.23, 1.000, .32, 1.000) both;
+     -o-animation: slide-in-with-blur .5s cubic-bezier(.23, 1.000, .32, 1.000) both;
  }
 
 
+ /* animation: start all the way down and go up */
  @keyframes slide-in-with-blur {
+     /* start all the way down invisible and smaller in x-dimension, with blur */
      0% {
          transform: translateY(1000px) scaleY(2.5) scaleX(.2);
          transform-origin: 50% 100%;
          filter: blur(40px);
          opacity: 0
      }
-
+     /* come up to the desired position and transform to normal size */
      100% {
          transform: translateY(0) scaleY(1) scaleX(1);
          transform-origin: 50% 50%;
@@ -106,8 +111,6 @@
  }
 
  .user-part {
-     /*  TODO: zorgen dat het in het midden zit*/
-
      margin-left: 10px;
      margin-top: 30px;
  }
@@ -117,7 +120,7 @@
      color: #b50000;
      font-size: 1em;
 
-     /* transition: */
+     /* transition for color change */
      -webkit-transition: background 0.4s ease-in-out;
      -moz-transition: background 0.4s ease-in-out;
      -o-transition: background 0.4s ease-in-out;
@@ -159,6 +162,7 @@
      bottom: 0px;
  }
 
+ /* server icon at server status */
  .beforetest::before {
      content: "";
      width: 30px;
