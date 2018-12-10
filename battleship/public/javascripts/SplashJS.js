@@ -34,7 +34,7 @@
     };
 
     //check if server is online
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname ==="145.94.152.38" || location.hostname === "145.94.150.157") {
         //if the host name is localhost or local ip, server is online
         console.log("server online!");
         document.getElementById("serverstatus").innerHTML = "Online!"; //jquery didn't work, so just use regular js
