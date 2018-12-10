@@ -113,7 +113,7 @@ var main = function () {
           var tcellclass = Tcell.classList;
           var pt = parseFloat(Tcell);
           pt = (pt * 10) % 10
-          if (tcellclass.contains("hasShip") || pt > 9) {
+          if (tcellclass.contains("hasShip") || pt > 9) {3
             return false;
           }
         }
