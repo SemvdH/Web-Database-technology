@@ -45,14 +45,32 @@
         console.log("server offline!");
     }
 
-    function goToGameScreen() {
-        var PlayerName = (".start-button input").value;
-        console.log(PlayerName);
-        // window.location.href='Game.html';
-    };
-    // document.cookie = "timesVisited=1";
-    // var x = document.cookie;
-    // console.log("cookie is " + x);
-// };
+    function setCookie(number) {
+        document.cookie = "GamesPlayed=" + number + ";";
+        }
 
-// $(document).ready(main);
+    function getCookie() {
+        var Cookie = decodeURIComponent(document.cookie);
+        var c = Cookie.split("=");
+        if(c[2] !== "") {
+            var Cnumber = parseFloat(c[2]);
+            return Cnumber;
+        }
+        else {
+            return null;
+        }
+    };
+
+    $(function Cookie() {
+        var koek = getCookie();
+        if(koek > 0) {
+            koek++;
+            document.getElementById("Cookieid").innerHTML = koek;
+            setCookie(koek);
+        }
+        else {
+            setCookie(1, 30);
+            koek = 1;
+            $(".Cookieclass").innerHTML = koek;
+        }
+    });

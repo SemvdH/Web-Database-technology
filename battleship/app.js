@@ -31,7 +31,7 @@ app.use(cookies(timesvisited.timesVisited));
 
 app.get("/", (req, res) => {
   console.log("cookie test");
-  res.cookie("testkoekje");
+  res.cookie("testkoekje", 'signed');
   //render game info
   res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
   res.send();
